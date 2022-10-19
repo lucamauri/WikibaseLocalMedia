@@ -89,7 +89,12 @@ class InlineImageFormatter implements ValueFormatter {
 
 		$fileName = $value->getValue();
 		// We cannot use makeTitle because it does not secureAndSplit()
-		$title = Title::makeTitleSafe( NS_FILE, $fileName, '', 'wikitrek' );
+		if ( $WLMInterwiki != null and $WLMInterwiki != '' ) {
+			$title = Title::makeTitleSafe( NS_MAIN, $fileName, '', $WLMInterwiki );
+		} else {
+			$title = Title::makeTitleSafe( NS_MAIN, $fileName );
+            	}
+
 		if ( $title === null ) {
 			return htmlspecialchars( $fileName );
 		}
