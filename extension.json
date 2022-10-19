@@ -39,6 +39,10 @@
 	},
 
 	"config": {
+		"WLMInterwiki": {
+      			"description": "Interwiki prefix of the wiki where images are stored. Same if where installed if null, empty or non-existent",
+      			"value": null
+		}
 	},
 
 	"ResourceFileModulePaths": {
