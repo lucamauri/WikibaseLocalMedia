@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace Wikibase\LocalMedia;
 
 use ValueFormatters\FormatterOptions;
+use MediaWiki\MediaWikiServices;
 
 final class HookHandlers {
 
