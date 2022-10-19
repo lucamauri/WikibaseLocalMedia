@@ -36,7 +36,7 @@ class ImageLinkFormatter implements ValueFormatter {
 		}
 
 		$fileName = $value->getValue();
-		$title = Title::makeTitleSafe( NS_MAIN, $fileName );
+		$title = Title::makeTitleSafe( NS_MAIN, $fileName, '', 'wikitrek' );
 
 		if ( $title === null ) {
 			return htmlspecialchars( $fileName );
