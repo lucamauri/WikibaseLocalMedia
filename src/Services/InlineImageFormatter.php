@@ -89,7 +89,7 @@ class InlineImageFormatter implements ValueFormatter {
 
 		$fileName = $value->getValue();
 		// We cannot use makeTitle because it does not secureAndSplit()
-		$title = Title::makeTitleSafe( NS_FILE, $fileName );
+		$title = Title::makeTitleSafe( NS_FILE, $fileName, '', 'wikitrek' );
 		if ( $title === null ) {
 			return htmlspecialchars( $fileName );
 		}
