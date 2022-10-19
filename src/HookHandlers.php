@@ -9,6 +9,9 @@ use ValueFormatters\FormatterOptions;
 final class HookHandlers {
 
 	public static function onWikibaseRepoDataTypes( array &$dataTypeDefinitions ): void {
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('WikibaseLocalMedia');
+		$WLMInterwiki = $config->get('WLMInterwiki');
+		
 		$dataTypeDefinitions['PT:localMedia'] = [
 			'value-type' => 'string',
 			'expert-module' => 'jquery.valueview.experts.LocalMediaType',
