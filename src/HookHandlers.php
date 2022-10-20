@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
 final class HookHandlers {
 
 	public static function onWikibaseRepoDataTypes( array &$dataTypeDefinitions ): void {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig('WikibaseLocalMedia');
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$WLMInterwiki = $config->get('WLMInterwiki');
 		
 		$dataTypeDefinitions['PT:localMedia'] = [
